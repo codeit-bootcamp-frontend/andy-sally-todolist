@@ -10,10 +10,15 @@ function App() {
     return `${date.getFullYear()}. ${date.getMonth() + 1}. ${date.getDate()}`;
   }
 
+  function addListItem(value) {
+    if (!value) return;
+    setList([...list, value]);
+  }
+
   return (
     <>
       <Header createdDate={makePrettyDate(createdDate)} />
-      <ToDoInput />
+      <ToDoInput onAdd={addListItem} />
     </>
   );
 }
