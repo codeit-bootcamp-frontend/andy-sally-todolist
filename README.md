@@ -1,12 +1,14 @@
 # andy-sally-todolist
 
-### 구현 기능
+## 구현 기능
 
 - 오늘 날짜 표시
 - 할 일 남은 개수 표시
 - 할 일 추가 기능
 - 할 일 완료 체크
 - 할 일 삭제
+
+## Project Tree
 
 ```
 andy-sally-todolist
