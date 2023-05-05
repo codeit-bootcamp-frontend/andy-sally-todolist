@@ -1,37 +1,29 @@
 import { useState, useRef } from "react";
 import { AiOutlinePlusCircle } from "react-icons/ai";
-import "./ToDoInput.css";
 
 function ToDoInput({ onAdd }) {
   const idRef = useRef(0);
   const [value, setValue] = useState("");
-  const [inputObject, setInputObject] = useState({});
 
   function handleChange(e) {
     setValue(e.target.value);
   }
 
-  function an() {
-    setInputObject((prevItem) => ({
-      ...prevItem,
+  function addListItem() {
+    const newTodoObject = {
       id: idRef.current,
       content: value,
-    }));
-    console.log(inputObject);
-  }
-
-  function addListItem() {
-    an();
-    onAdd(inputObject);
+    };
+    onAdd(newTodoObject);
     idRef.current += 1;
     setValue("");
   }
 
   return (
-    <>
+    <div className="inputContainer">
       <input type="text" placeholder="오늘의 할 일은?" value={value} onChange={handleChange} />
       <AiOutlinePlusCircle className="plusIcon" size={50} onClick={addListItem} />
-    </>
+    </div>
   );
 }
 
