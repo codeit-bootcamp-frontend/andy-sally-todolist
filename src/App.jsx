@@ -11,6 +11,9 @@ function App() {
     return `${date.getFullYear()}. ${date.getMonth() + 1}. ${date.getDate()}`;
   }
 
+  const undoneTodo = list.filter((object) => object.isDone === false);
+  const undoneTodoLength = undoneTodo.length;
+
   function addListItem(inputObject) {
     if (!inputObject.content) return;
     setList([...list, inputObject]);
@@ -30,13 +33,14 @@ function App() {
           return { ...item, isDone: false };
         }
       }
+      return item;
     });
     setList(nextList);
   }
 
   return (
     <>
-      <Header createdDate={makePrettyDate(createdDate)} />
+      <Header createdDate={makePrettyDate(createdDate)} undoneTodo={undoneTodoLength} />
       <ToDoInput onAdd={addListItem} />
       <ToDoList list={list} onDelete={deleteListItem} onCheck={checkListItem} />
     </>

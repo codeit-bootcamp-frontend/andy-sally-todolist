@@ -1,10 +1,10 @@
-function Header({ createdDate }) {
+function Header({ createdDate, undoneTodo }) {
   return (
     <>
       <h1>TODO LIST</h1>
       <div>
         <p>{createdDate}</p>
-        <p>남은 할 일 개수</p>
+        <p>{undoneTodo}개의 할 일이 남았습니다.</p>
       </div>
     </>
   );

@@ -1,3 +1,5 @@
+import { MdOutlineCheckCircleOutline, MdRadioButtonUnchecked } from "react-icons/md";
+
 function ToDoListItem({ id, content, isDone, onDelete, onCheck }) {
   function handleDeleteItem() {
     onDelete(id);
@@ -10,9 +12,9 @@ function ToDoListItem({ id, content, isDone, onDelete, onCheck }) {
   return (
     <li className="todolist-item" id={id}>
       <button className="check-button" onClick={handleCheckItem}>
-        {isDone ? "체크표시 아이콘" : "빈 동그라미"}
+        {isDone ? <MdOutlineCheckCircleOutline /> : <MdRadioButtonUnchecked />}
       </button>
-      {content}
+      <input defaultValue={content} />
       <button onClick={handleDeleteItem}>X</button>
     </li>
   );
