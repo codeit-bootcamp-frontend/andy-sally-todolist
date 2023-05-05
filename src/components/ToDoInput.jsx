@@ -13,6 +13,7 @@ function ToDoInput({ onAdd }) {
     const newTodoObject = {
       id: idRef.current,
       content: value,
+      isDone: false,
     };
     onAdd(newTodoObject);
     idRef.current += 1;

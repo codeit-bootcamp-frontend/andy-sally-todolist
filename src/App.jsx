@@ -12,7 +12,7 @@ function App() {
   }
 
   function addListItem(inputObject) {
-    if (!inputObject) return;
+    if (!inputObject.content) return;
     setList([...list, inputObject]);
   }
 
@@ -21,11 +21,24 @@ function App() {
     setList(nextList);
   }
 
+  function checkListItem(id) {
+    const nextList = list.map((item) => {
+      if (item.id === id) {
+        if (item.isDone === false) {
+          return { ...item, isDone: true };
+        } else {
+          return { ...item, isDone: false };
+        }
+      }
+    });
+    setList(nextList);
+  }
+
   return (
     <>
       <Header createdDate={makePrettyDate(createdDate)} />
       <ToDoInput onAdd={addListItem} />
-      <ToDoList list={list} onDelete={deleteListItem} />
+      <ToDoList list={list} onDelete={deleteListItem} onCheck={checkListItem} />
     </>
   );
 }
