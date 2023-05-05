@@ -7,3 +7,23 @@
 - 할 일 추가 기능
 - 할 일 완료 체크
 - 할 일 삭제
+
+```
+andy-sally-todolist
+|
+├─ index.html
+├─ package-lock.json
+├─ package.json
+├─ public
+├─ src
+│  ├─ App.jsx
+│  ├─ components
+│  │  ├─ Header.jsx
+│  │  ├─ ToDoInput.jsx
+│  │  ├─ ToDoList.css
+│  │  ├─ ToDoList.jsx
+│  │  └─ ToDoListItem.jsx
+│  └─ main.jsx
+└─ vite.config.js
+
+```
